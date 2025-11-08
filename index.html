@@ -1,3 +1,12 @@
+<!--
+    High Rock Park Border Staff Handbook
+    Theme: Blue and Gold (Professional & Authoritative)
+    Updates Included:
+    1. New separate Leadership Team and Executive Team ranks/lists.
+    2. Updated promotion cooldowns.
+    3. Management (MGMT) and Leadership (LDR) granted permissions for TIME, WEATHER, and STARTFIRE.
+    4. All command permissions and symbols are finalized.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +17,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root {
-            --color-bg-primary: #0D0D0D; /* Darker slate background */
-            --color-bg-secondary: #1C1C1C; /* Darker secondary background */
-            --color-text-primary: #E0E0E0;
-            --color-accent-cyan: #00E5FF; /* Refined Cyan */
-            --color-accent-pink: #FF4DFF; /* Refined Magenta/Pink */
-            --color-success: #00CC00; /* Darker Green for better contrast */
-            --color-error: #FF3333; /* Slightly softer Red */
+            /* BLUE & GOLD THEME */
+            --color-bg-primary: #000A1A; /* Deep Navy Blue */
+            --color-bg-secondary: #0A1929; /* Dark Sapphire Blue */
+            --color-text-primary: #F0F0F0; /* Off-White/Silver */
+            --color-accent-blue: #4DA6FF; /* Vibrant Steel Blue (Main Accent) */
+            --color-accent-gold: #FFCC00; /* Muted Gold/Amber (Secondary Accent) */
+            --color-success: #00CC00; /* Checkmark Green */
+            --color-error: #FF3333; /* Crossmark Red */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -31,25 +41,25 @@
         }
         .card {
             background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-accent-pink);
+            border: 1px solid var(--color-accent-gold);
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); /* Use refined cyan for subtle shadow */
+            box-shadow: 0 0 15px rgba(77, 166, 255, 0.2); /* Accent Blue shadow */
         }
         h1 {
             font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
-            color: var(--color-accent-cyan);
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.6); /* Use refined cyan for glow */
+            color: var(--color-accent-blue);
+            text-shadow: 0 0 8px rgba(77, 166, 255, 0.6); /* Accent Blue glow */
             margin-bottom: 0.5rem;
         }
         h2 {
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--color-accent-pink);
-            border-bottom: 2px solid var(--color-accent-cyan);
+            color: var(--color-accent-gold);
+            border-bottom: 2px solid var(--color-accent-blue);
             padding-bottom: 0.5rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
@@ -57,14 +67,14 @@
         h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--color-accent-cyan);
+            color: var(--color-accent-blue);
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
         }
         .table-wrapper {
             overflow-x: auto;
             border-radius: 8px;
-            border: 1px solid var(--color-accent-cyan);
+            border: 1px solid var(--color-accent-blue);
         }
         table {
             width: 100%;
@@ -74,38 +84,32 @@
         th, td {
             padding: 10px;
             text-align: left;
-            border: 1px solid #333;
+            border: 1px solid #1A3451; /* Dark blue line for table */
         }
         th {
-            background-color: #330033; /* Darker Pink/Purple Header */
-            color: var(--color-accent-cyan);
+            background-color: #4D3800; /* Dark Gold/Bronze Header */
+            color: var(--color-accent-blue);
             text-transform: uppercase;
             font-size: 0.8rem;
             font-weight: 700;
         }
         tr:nth-child(even) {
-            background-color: #1A1A1A;
+            background-color: #0F2033;
         }
         /* Custom classes for check and cross marks */
         .text-allowed { color: var(--color-success); font-weight: 700; }
         .text-restricted { color: var(--color-error); font-weight: 700; }
 
-        /* New styling for the signature box */
+        /* Styling for ranks and signatures */
         #signature-box {
-            background-color: #1A1A1A; /* Slightly lighter than the card background */
-            border: 1px solid var(--color-accent-cyan); /* Cyan border for definition */
+            background-color: #0F2033;
+            border: 1px solid var(--color-accent-blue);
             border-radius: 12px;
-            box-shadow: 0 0 10px rgba(255, 77, 255, 0.3); /* Pink glow */
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.3); /* Gold glow */
             padding: 1.5rem;
             margin-top: 2rem;
         }
 
-        .footer-signature {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
         .rank-list-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -117,16 +121,16 @@
             flex: 1 1 45%;
             min-width: 250px;
             padding: 1rem;
-            background-color: #2a002a;
+            background-color: #1A2838; /* Darker blue shade for rank boxes */
             border-radius: 8px;
-            border: 1px solid var(--color-accent-pink);
-            box-shadow: 0 0 5px rgba(255, 77, 255, 0.2); /* Pink subtle shadow */
+            border: 1px solid var(--color-accent-gold);
+            box-shadow: 0 0 5px rgba(255, 204, 0, 0.2); /* Gold subtle shadow */
         }
         .rank-column h3 {
-            border-bottom: 1px solid var(--color-accent-pink);
+            border-bottom: 1px solid var(--color-accent-gold);
             padding-bottom: 5px;
             margin-top: 0;
-            color: var(--color-accent-cyan);
+            color: var(--color-accent-blue);
         }
         .rank-column ul {
             list-style: none;
@@ -140,34 +144,12 @@
             list-style: disc;
             margin-left: 20px;
         }
-        .command-row {
-            background-color: #1A1A1A;
-        }
-        .command-row:hover {
-            background-color: #2a2a2a;
-        }
-
-        /* Styling for individual signature items */
-        .signature-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            min-width: 150px;
-            padding-right: 1.5rem;
-            padding-left: 1.5rem;
-        }
         .signature-name {
-            color: var(--color-accent-pink);
-            text-shadow: 0 0 4px rgba(255, 77, 255, 0.6);
+            color: var(--color-accent-gold);
+            text-shadow: 0 0 4px rgba(255, 204, 0, 0.6);
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.1rem;
-        }
-        .signature-role {
-            color: #A0A0A0;
-            font-size: 0.85rem;
-            font-weight: 400;
         }
 
         /* Responsive adjustments */
@@ -178,16 +160,6 @@
             .rank-column {
                 flex: 1 1 100%;
                 min-width: unset;
-            }
-            .footer-signature {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            .signature-item {
-                 min-width: 100%;
-                 border-right: none;
-                 padding-bottom: 1rem;
             }
         }
     </style>
@@ -204,6 +176,7 @@
     <div class="card">
         <h2>THINGS TO CONSIDER</h2>
         <div class="space-y-4">
+            <!-- Rules with original symbols -->
             <p><span class="text-allowed">✔</span> Rule 1: Staff are required to utilize spelling, punctuation and grammar at all times. (This includes capitalizing the start of sentences and putting periods at the ends of sentences).</p>
             <p><span class="text-allowed">✔</span> Rule 2: Staff must always maintain professionalism and respect for others.</p>
             <p><span class="text-restricted">✗</span> Rule 3: Staff cannot abuse the :h and :m commands. Only use these commands for announcements (e.g. `:h Blocking border lanes or honking and ramming at the border will result in moderation`).</p>
@@ -227,6 +200,7 @@
     <div class="card">
         <h2>Staff Rank Hierarchy & Permissions</h2>
 
+        <!-- Rank List (Updated for separate Leadership/Executive Teams) -->
         <div class="rank-list-wrapper">
             <div class="rank-column">
                 <h3>Ownership Team: (@Ownership Team)</h3>
@@ -237,7 +211,14 @@
                 </ul>
             </div>
             <div class="rank-column">
-                <h3>Leadership Team: (@Executive Team)</h3>
+                <h3>Leadership Team: (@Leadership Team)</h3>
+                <ul>
+                    <li>@Senior Leadership</li>
+                    <li>@Junior Leadership</li>
+                </ul>
+            </div>
+            <div class="rank-column">
+                <h3>Executive Team: (@Executive Team)</h3>
                 <ul>
                     <li>@Senior Executive</li>
                     <li>@Junior Executive</li>
@@ -282,7 +263,7 @@
             </div>
         </div>
 
-        <h3>Command Usage per Team</h3>
+        <!-- Command Usage Table (Updated permissions) --><h3>Command Usage per Team</h3>
         <p class="text-sm text-gray-400 mb-4">Note: Permissions are hierarchical. (✔ = Allowed, ✗ = Not Allowed)</p>
         <div class="table-wrapper">
             <table>
@@ -293,22 +274,29 @@
                         <th>ADMIN</th>
                         <th>SUPERVISOR</th>
                         <th>MANAGEMENT</th>
-                        <th>LEADERSHIP</th> <th>SHR</th>
+                        <th>LEADERSHIP</th>
+                        <th>SHR</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Core Moderation Commands -->
                     <tr class="command-row"><td>Use: H command</td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: KICK command</td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <!-- Admin Commands -->
                     <tr class="command-row"><td>Use: PT command</td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: JAIL command</td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: BAN command</td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <!-- Supervisor Commands -->
                     <tr class="command-row"><td>Use: KILL command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: DOWN command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <!-- Management Commands -->
                     <tr class="command-row"><td>Use: TIME command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
-                    <tr class="command-row"><td>Use: STARTFIRE command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: STARTFIRE command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: WEATHER command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: MOD command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <!-- New Command -->
                     <tr class="command-row"><td>Use: ADMIN command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <!-- Global Restriction Commands -->
                     <tr class="command-row"><td>Use: HELPER command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
                     <tr class="command-row"><td>Use: M command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td></tr>
                     <tr class="command-row"><td>Use 'ALL arg in commands'</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td></tr>
@@ -318,9 +306,9 @@
             </table>
         </div>
 
-        <h3>Promotion Cooldowns</h3>
+        <!-- Promotion Cooldowns (Updated) --><h3>Promotion Cooldowns</h3>
         <ul class="cooldown-list ml-4 text-gray-400">
-            <li>Moderator Team Cooldown - 3 days</li>
+            <li>Moderation Team Cooldown - 3 days</li>
             <li>Administrator Team Cooldown - 5 days</li>
             <li>Supervisory Team Cooldown - 7 days</li>
             <li>Management Team Cooldown - 9 days</li>
@@ -331,7 +319,7 @@
         <p class="text-sm text-gray-400 mt-4">STAFF TRAINERS can use the necessary commands to train the Trial Mods. Staff members of any rank may use PROHIBITED commands only with the authorization of a HIGH RANK member.</p>
     </div>
 
-    <div class="card">
+    <!-- Punishment Section (Unchanged) --><div class="card">
         <h2>Player Punishments</h2>
 
         <h3 id="player-punishments">Player Punishments Matrix</h3>
@@ -479,19 +467,20 @@
 
     </div>
 
-    <footer class="text-center text-sm mt-8 p-4">
+    <!-- Footer --><footer class="text-center text-sm mt-8 p-4">
         <p class="text-gray-500">Document Code: [RASM-000000 00000003] | Document Privacy: [PRIVATE] | Date of Update: 10-10-2025</p>
 
-        <div id="signature-box">
-            <h3 class="text-center text-lg font-semibold mb-4 text-cyan-400" style="color: var(--color-accent-cyan);">Official Signatures</h3>
-            <div class="footer-signature">
+        <!-- SIGNATURE BOX --><div id="signature-box">
+            <h3 class="text-center text-lg font-semibold mb-4 text-cyan-400" style="color: var(--color-accent-blue);">Official Signatures</h3>
+            <div class="footer-signature flex flex-wrap justify-center gap-6">
+                <!-- Prowl_l -->
                 <div class="signature-item">
                     <p class="signature-name">Prowl_l</p>
-                    <p class="signature-role">Owner & Staff Director</p>
+                    <p class="signature-role" style="color: #A0A0A0;">Owner & Staff Director</p>
                 </div>
             </div>
         </div>
-        <p class="mt-4 text-gray-500">For official inquiries, <a href="https://discord.gg/hrpb" target="_blank" class="text-cyan-400 hover:text-cyan-300">Discord</a> | GMAIL.COM (hrpb012@gmail.com)</p>
+        <!-- END SIGNATURE BOX --><p class="mt-4 text-gray-500">For official inquiries, <a href="https://discord.gg/hrpb" target="_blank" class="text-cyan-400 hover:text-cyan-300" style="color: var(--color-accent-blue);">Discord</a> | GMAIL.COM (hrpb012@gmail.com)</p>
     </footer>
 
 </div>
