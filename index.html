@@ -1,10 +1,4 @@
-<!-- 
-    High Rock Park Border Staff Handbook 
-    Update log : - Reverted all changes, 
-                    + Formatting
-                     + Fixed text not loading
-
---><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -92,9 +86,10 @@
         tr:nth-child(even) {
             background-color: #1A1A1A;
         }
-        .text-success { color: var(--color-success); }
-        .text-error { color: var(--color-error); }
-        
+        /* Custom classes for check and cross marks */
+        .text-allowed { color: var(--color-success); font-weight: 700; }
+        .text-restricted { color: var(--color-error); font-weight: 700; }
+
         /* New styling for the signature box */
         #signature-box {
             background-color: #1A1A1A; /* Slightly lighter than the card background */
@@ -106,10 +101,9 @@
         }
 
         .footer-signature {
-            /* Now an inner container for horizontal layout */
-            display: flex; 
+            display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Changed to center for single signature */
+            justify-content: center;
             gap: 1.5rem;
         }
         .rank-list-wrapper {
@@ -123,7 +117,7 @@
             flex: 1 1 45%;
             min-width: 250px;
             padding: 1rem;
-            background-color: #2a002a; 
+            background-color: #2a002a;
             border-radius: 8px;
             border: 1px solid var(--color-accent-pink);
             box-shadow: 0 0 5px rgba(255, 77, 255, 0.2); /* Pink subtle shadow */
@@ -146,48 +140,37 @@
             list-style: disc;
             margin-left: 20px;
         }
-        /* Custom checkmark/cross styling */
-        .check-mark {
-            color: var(--color-success);
-            font-weight: 900;
-        }
-        .cross-mark {
-            color: var(--color-error);
-            font-weight: 900;
-        }
         .command-row {
             background-color: #1A1A1A;
         }
         .command-row:hover {
             background-color: #2a2a2a;
         }
-        
-        /* Styling for individual signature items (USERNAME on top, RANK below) */
+
+        /* Styling for individual signature items */
         .signature-item {
             display: flex;
-            flex-direction: column; /* Stack name and role */
+            flex-direction: column;
             align-items: center;
             padding: 0.5rem 1rem;
-            min-width: 150px; 
-            border-right: none; /* Removed internal divider for single item */
+            min-width: 150px;
             padding-right: 1.5rem;
             padding-left: 1.5rem;
         }
-        /* No need for last-child rule if there's only one item */
         .signature-name {
-            color: var(--color-accent-pink); /* Using pink accent for names */
-            text-shadow: 0 0 4px rgba(255, 77, 255, 0.6); /* Pink glow for name */
-            font-size: 1.3rem; 
+            color: var(--color-accent-pink);
+            text-shadow: 0 0 4px rgba(255, 77, 255, 0.6);
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 0.1rem; /* Closer to the rank */
+            margin-bottom: 0.1rem;
         }
         .signature-role {
-            color: #A0A0A0; /* Lighter grey for role text */
+            color: #A0A0A0;
             font-size: 0.85rem;
             font-weight: 400;
         }
 
-        /* Responsive adjustments for the rank list and signatures on small screens */
+        /* Responsive adjustments */
         @media (max-width: 600px) {
             .rank-list-wrapper {
                 flex-direction: column;
@@ -204,7 +187,6 @@
             .signature-item {
                  min-width: 100%;
                  border-right: none;
-                 border-bottom: none; /* Removed bottom divider as well for single item */
                  padding-bottom: 1rem;
             }
         }
@@ -214,7 +196,7 @@
 
 <div class="container">
     <header class="text-center mb-10">
-        <!-- FIXED HEADER/TITLE --><h1 class="uppercase">HIGH ROCK PARK BORDER</h1>
+        <h1>HIGH ROCK PARK BORDER</h1>
         <p class="text-sm text-gray-500 mt-2">STAFF GUIDE & HANDBOOK</p>
         <p class="text-sm text-gray-500">Staff Standards & Rights Division | "High Rock Park Border leadership team" - est 2025</p>
     </header>
@@ -222,22 +204,22 @@
     <div class="card">
         <h2>THINGS TO CONSIDER</h2>
         <div class="space-y-4">
-            <p><span class="text-success font-semibold">✔ Rule 1:</span> Staff are required to utilize spelling, punctuation and grammar at all times. (This includes capitalizing the start of sentences and putting periods at the ends of sentences).</p>
-            <p><span class="text-success font-semibold">✔ Rule 2:</span> Staff must always maintain professionalism and respect for others.</p>
-            <p><span class="text-error font-semibold">✗ Rule 3:</span> Staff cannot abuse the :h and :m commands. Only use these commands for announcements (e.g. `:h Blocking border lanes or honking and ramming at the border will result in moderation` ✅ `:h Mod online`❌).</p>
-            <p><span class="text-success font-semibold">✔ Rule 4:</span> Staff must always use four or more letter commands. (e.g. `:view Jydx` ✅ `:kick jX` is not permitted).</p>
-            <p><span class="text-success font-semibold">✔ Rule 5:</span> Staff must respond to mod calls. Failure to do so is considered a neglect of duty. You signed up for this job and you have to fulfill every responsibility.</p>
-            <p><span class="text-error font-semibold">✗ Rule 6:</span> Staff may NOT use kill-logs as proof in an RDM situation. We only take clips, screenshots, and recordings as proof.</p>
-            <p><span class="text-success font-semibold">✔ Rule 7:</span> Staff must always use correct uniforms and liveries.</p>
-            <p><span class="text-success font-semibold">✔ Rule 8:</span> All staff should know the rules and review all staff documents (Punishment Section).</p>
-            <p><span class="text-success font-semibold">✔ Rule 9:</span> Staff must have the correct callsign including their rank, and random numbers. (e.g. Junior Mod = JM-120 or Senior Admin = SA-01).</p>
-            <p><span class="text-error font-semibold">✗ Rule 10:</span> Staff may not go AFK on duty. If you are on duty, you should be moderating—not standing and doing nothing.</p>
-            <p><span class="text-success font-semibold">✔ Rule 11:</span> Staff must take proper measures to maintain a safe environment for all members.</p>
-            <p><span class="text-error font-semibold">✗ Rule 12:</span> Staff cannot be disrespectful to anyone—including members. SHR and HR disrespect will lead to logged warnings.</p>
-            <p><span class="text-success font-semibold">✔ Rule 13:</span> Staff must use common sense. Just because a rule isn't on here, doesn't mean you can do it. Think before you do something. (e.g. Trolling).</p>
-            <p><span class="text-error font-semibold">✗ Rule 14:</span> Staff cannot abuse their commands and use it in an unfair way that ruins the roleplay experience.</p>
-            <p><span class="text-error font-semibold">✗ Rule 15:</span> Staff cannot use commands off duty unless you have the off-duty commands role or are ownership+.</p>
-            <p><span class="text-error font-semibold">✗ Rule 16:</span> Staff must use 7+ letters of their username for kick or ban. If their username's short, then use the full username.(eg.':ban gulp'❌':ban gulpwithme'✅)</p>
+            <p><span class="text-allowed">✔</span> Rule 1: Staff are required to utilize spelling, punctuation and grammar at all times. (This includes capitalizing the start of sentences and putting periods at the ends of sentences).</p>
+            <p><span class="text-allowed">✔</span> Rule 2: Staff must always maintain professionalism and respect for others.</p>
+            <p><span class="text-restricted">✗</span> Rule 3: Staff cannot abuse the :h and :m commands. Only use these commands for announcements (e.g. `:h Blocking border lanes or honking and ramming at the border will result in moderation`).</p>
+            <p><span class="text-allowed">✔</span> Rule 4: Staff must always use four or more letter commands. (e.g. `:view Jydx` ✔ `:kick jX` is not permitted).</p>
+            <p><span class="text-allowed">✔</span> Rule 5: Staff must respond to mod calls. Failure to do so is considered a neglect of duty. You signed up for this job and you have to fulfill every responsibility.</p>
+            <p><span class="text-restricted">✗</span> Rule 6: Staff may NOT use kill-logs as proof in an RDM situation. We only take clips, screenshots, and recordings as proof.</p>
+            <p><span class="text-allowed">✔</span> Rule 7: Staff must always use correct uniforms and liveries.</p>
+            <p><span class="text-allowed">✔</span> Rule 8: All staff should know the rules and review all staff documents (Punishment Section).</p>
+            <p><span class="text-allowed">✔</span> Rule 9: Staff must have the correct callsign including their rank, and random numbers. (e.g. Junior Mod = JM-120 or Senior Admin = SA-01).</p>
+            <p><span class="text-restricted">✗</span> Rule 10: Staff may not go AFK on duty. If you are on duty, you should be moderating—not standing and doing nothing.</p>
+            <p><span class="text-allowed">✔</span> Rule 11: Staff must take proper measures to maintain a safe environment for all members.</p>
+            <p><span class="text-restricted">✗</span> Rule 12: Staff cannot be disrespectful to anyone—including members. SHR and HR disrespect will lead to logged warnings.</p>
+            <p><span class="text-allowed">✔</span> Rule 13: Staff must use common sense. Just because a rule isn't on here, doesn't mean you can do it. Think before you do something. (e.g. Trolling).</p>
+            <p><span class="text-restricted">✗</span> Rule 14: Staff cannot abuse their commands and use it in an unfair way that ruins the roleplay experience.</p>
+            <p><span class="text-restricted">✗</span> Rule 15: Staff cannot use commands off duty unless you have the off-duty commands role or are ownership+.</p>
+            <p><span class="text-restricted">✗</span> Rule 16: Staff must use 7+ letters of their username for kick or ban. If their username's short, then use the full username.(eg.':ban gulp'✗':ban gulpwithme'✔)</p>
         </div>
         <p class="mt-4 text-center text-red-500 font-bold">Any staff member who violates any of these rules will be immediately TERMINATED. IT IS THE RESPONSIBILITY OF EACH STAFF MEMBER TO READ THIS DOCUMENT.</p>
     </div>
@@ -245,7 +227,7 @@
     <div class="card">
         <h2>Staff Rank Hierarchy & Permissions</h2>
 
-        <!-- Rank List --><div class="rank-list-wrapper">
+        <div class="rank-list-wrapper">
             <div class="rank-column">
                 <h3>Ownership Team: (@Ownership Team)</h3>
                 <ul>
@@ -300,7 +282,7 @@
             </div>
         </div>
 
-        <!-- Command Usage Table --><h3>Command Usage per Team</h3>
+        <h3>Command Usage per Team</h3>
         <p class="text-sm text-gray-400 mb-4">Note: Permissions are hierarchical. (✔ = Allowed, ✗ = Not Allowed)</p>
         <div class="table-wrapper">
             <table>
@@ -311,54 +293,48 @@
                         <th>ADMIN</th>
                         <th>SUPERVISOR</th>
                         <th>MANAGEMENT</th>
-                        <th>SHR</th>
+                        <th>LEADERSHIP</th> <th>SHR</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Core Moderation Commands -->
-                    <tr class="command-row"><td>Use: H command</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <tr class="command-row"><td>Use: KICK command</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <!-- Admin Commands -->
-                    <tr class="command-row"><td>Use: PT command</td><td>✗</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <tr class="command-row"><td>Use: JAIL command</td><td>✗</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <tr class="command-row"><td>Use: BAN command</td><td>✗</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <!-- Supervisor Commands -->
-                    <tr class="command-row"><td>Use: KILL command</td><td>✗</td><td>✗</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <tr class="command-row"><td>Use: DOWN command</td><td>✗</td><td>✗</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                    <!-- Management Commands (TIME is restricted from Supervisor) -->
-                    <tr class="command-row"><td>Use: TIME command</td><td>✗</td><td>✗</td><td>✗</td><td>✔</td><td>✔</td></tr>
-                    <!-- SHR/Executive Commands (STARTFIRE, WEATHER, MOD, HELPER are restricted from Management) -->
-                    <tr class="command-row"><td>Use: STARTFIRE command</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✔</td></tr>
-                    <tr class="command-row"><td>Use: WEATHER command</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✔</td></tr>
-                    <tr class="command-row"><td>Use: MOD command</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✔</td></tr>
-                    <!-- New Command -->
-                    <tr class="command-row"><td>Use: ADMIN command</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-                    <!-- Global Restriction Commands (All X) -->
-                    <tr class="command-row"><td>Use: HELPER command</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-                    <tr class="command-row"><td>Use: M command</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-                    <tr class="command-row"><td>Use 'ALL arg in commands'</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-                    <tr class="command-row"><td>Use 'OTHERS arg in commands'</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-                    <tr class="command-row"><td>Use OFF DUTY commands</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
+                    <tr class="command-row"><td>Use: H command</td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: KICK command</td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: PT command</td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: JAIL command</td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: BAN command</td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: KILL command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: DOWN command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: TIME command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: STARTFIRE command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: WEATHER command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: MOD command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: ADMIN command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: HELPER command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-allowed">✔</span></td></tr>
+                    <tr class="command-row"><td>Use: M command</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td></tr>
+                    <tr class="command-row"><td>Use 'ALL arg in commands'</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td></tr>
+                    <tr class="command-row"><td>Use 'OTHERS arg in commands'</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td></tr>
+                    <tr class="command-row"><td>Use OFF DUTY commands</td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td><td><span class="text-restricted">✗</span></td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Promotion Cooldowns --><h3>Promotion Cooldowns</h3>
+        <h3>Promotion Cooldowns</h3>
         <ul class="cooldown-list ml-4 text-gray-400">
-            <li>Moderation Team Cooldown - 5 days</li>
-            <li>Administration Team Cooldown - 7 days</li>
-            <li>Supervisory Team Cooldown - 9 days</li>
-            <li>Management Team Cooldown - 11 days</li>
-            <li>Executive Team - 13 days</li>
-            <li>Ownership Team - 15 days</li>
+            <li>Moderator Team Cooldown - 3 days</li>
+            <li>Administrator Team Cooldown - 5 days</li>
+            <li>Supervisory Team Cooldown - 7 days</li>
+            <li>Management Team Cooldown - 9 days</li>
+            <li>Leadership Team Cooldown - 11 days</li>
+            <li>Executive Team Cooldown - 13 days</li>
+            <li>Ownership Cooldown is generally 15 days, but is currently unobatainable.</li>
         </ul>
         <p class="text-sm text-gray-400 mt-4">STAFF TRAINERS can use the necessary commands to train the Trial Mods. Staff members of any rank may use PROHIBITED commands only with the authorization of a HIGH RANK member.</p>
     </div>
 
-    <!-- Punishment Section --><div class="card">
-        <h2>Player & Staff Punishments</h2>
+    <div class="card">
+        <h2>Player Punishments</h2>
 
-        <!-- Player Punishments --><h3 id="player-punishments">Player Punishments Matrix</h3>
+        <h3 id="player-punishments">Player Punishments Matrix</h3>
         <div class="table-wrapper mb-8">
             <table>
                 <thead>
@@ -501,178 +477,23 @@
             </table>
         </div>
 
-        <!-- Staff Punishments --><h3 id="staff-punishments">Staff Disciplinary Actions</h3>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rule</th>
-                        <th>Description</th>
-                        <th>First Time Punishment (1x WARNING)</th>
-                        <th>(+2 WARNINGS) Punishment (1x STRIKE)</th>
-                        <th>(+2 STRIKES) Punishment (1x SUSPENSION)</th>
-                        <th>(2+ SUSPENSION) Punishment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Spelling, punctuation & grammar</td>
-                        <td>Not using capital letters at the start, no periods at the end, bad grammar</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Professionalism & respect</td>
-                        <td>Being disrespectful or unprofessional</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Abuse of :h or :m commands</td>
-                        <td>Using these commands for non-announcements</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Not using 4+ letter commands</td>
-                        <td>Using short commands (e.g., ;kick xxr)</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Ignoring mod calls</td>
-                        <td>Not responding to moderation calls</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Using kill-logs as proof</td>
-                        <td>Using kill-logs as proof in RDM cases</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Wrong uniforms/liveries</td>
-                        <td>Not wearing the correct uniform/livery</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Not knowing rules/docs</td>
-                        <td>Being unaware of rules and staff documents</td>
-                        <td>SUSPENSION</td>
-                        <td>&ndash;</td>
-                        <td>&ndash;</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Incorrect callsign</td>
-                        <td>Not using correct callsign with rank & numbers</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>AFK on duty</td>
-                        <td>Being inactive while on duty</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Not maintaining safe environment</td>
-                        <td>Not ensuring a safe environment for players</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Disrespect to anyone</td>
-                        <td>Disrespecting members/SHR/HR</td>
-                        <td>STRIKE</td>
-                        <td>&ndash;</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Lack of common sense</td>
-                        <td>Trolling or doing things not listed but unreasonable</td>
-                        <td>WARNING</td>
-                        <td>STRIKE</td>
-                        <td>SUSPENSION</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Abuse of commands</td>
-                        <td>Using commands unfairly and ruining RP</td>
-                        <td>SUSPENSION</td>
-                        <td>&ndash;</td>
-                        <td>&ndash;</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Using off-duty commands on duty</td>
-                        <td>Using off-duty commands without permission</td>
-                        <td>SUSPENSION</td>
-                        <td>&ndash;</td>
-                        <td>&ndash;</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                    <tr>
-                        <td>Incorrect Punishment</td>
-                        <td>Giving wrong punishment to a player</td>
-                        <td>SUSPENSION</td>
-                        <td>&ndash;</td>
-                        <td>&ndash;</td>
-                        <td>TERMINATION</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
-    <!-- Footer --><footer class="text-center text-sm mt-8 p-4">
+    <footer class="text-center text-sm mt-8 p-4">
         <p class="text-gray-500">Document Code: [RASM-000000 00000003] | Document Privacy: [PRIVATE] | Date of Update: 10-10-2025</p>
-        
-        <!-- SIGNATURE BOX --><div id="signature-box">
+
+        <div id="signature-box">
             <h3 class="text-center text-lg font-semibold mb-4 text-cyan-400" style="color: var(--color-accent-cyan);">Official Signatures</h3>
             <div class="footer-signature">
-                <!-- Prowl_l - now centered --><div class="signature-item">
+                <div class="signature-item">
                     <p class="signature-name">Prowl_l</p>
                     <p class="signature-role">Owner & Staff Director</p>
                 </div>
             </div>
         </div>
-        <!-- END SIGNATURE BOX --><p class="mt-4 text-gray-500">For official inquiries, <a href="https://discord.gg/hrpb" target="_blank" class="text-cyan-400 hover:text-cyan-300">Discord</a> | GMAIL.COM (hrpb012@gmail.com)</p>
+        <p class="mt-4 text-gray-500">For official inquiries, <a href="https://discord.gg/hrpb" target="_blank" class="text-cyan-400 hover:text-cyan-300">Discord</a> | GMAIL.COM (hrpb012@gmail.com)</p>
     </footer>
 
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
